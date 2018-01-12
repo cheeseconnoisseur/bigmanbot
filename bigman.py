@@ -1,5 +1,6 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, ConversationHandler
 import logging
+import telegram
 from pytube import YouTube
 import os
 import random
@@ -26,15 +27,18 @@ def tube(bot, update):
 
 def location(bot, update):
     user = update.message.text
+    bot.sendChatAction(chat_id=update.message.chat_id, action=telegram.ChatAction.TYPING, timeout = 600)
     logger.info("starting")
     #update.message.reply_text(update.message.text)
     print(user)
     yt = YouTube(update.message.text)
-    #yt = YouTube("https://www.youtube.com/watch?v=wH-by1ydBTM")
+    #yt = YouTube("https://www.youtube.com/watch?v=)
     title = yt.title
     stream = yt.streams.first()
+    bot.send_message(chat_id=update.message.chat_id,message_id=123, text="downlaoding")
     stream.download()
     oldtitle = title
+    bot.send_message(chat_id=update.message.chat_id,message_id=123, text="downlaoding")
     try:
         title = title + ".mp4"
         #YouTube(update.message.text).streams.first().download('media')
