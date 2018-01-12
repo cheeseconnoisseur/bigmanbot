@@ -8,6 +8,7 @@ import random
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+BIO = range(1)
 
 def start(bot, update):
     user = update.message.from_user
@@ -19,18 +20,17 @@ def tube(bot, update):
     #update.message.reply_text("send vid name (n) or vid link(l)?")
     #bot.send_message(chat_id=update.message.chat_id, text="send vid name (n) or vid link(l)?")
     #chat_id = bot.get_updates()[-1].message.chat_id
+    update.message.reply_text('send link')
 
-    user = update.message.reply_text('send vid name (n) or vid link(l)?')
-    update.message.reply_text(user)
-    no = location()
-    update.message.reply_text(no)
+    return BIO
 
 def location(bot, update):
-    user = update.message.from_user
-    user_location = update.message.location
-    logger.info(user.first_name)
-    update.message.reply_text(update.message.text)
+    user = update.message.text
+    logger.info("starting")
+    #update.message.reply_text(update.message.text)
+    print(user)
     yt = YouTube(update.message.text)
+    #yt = YouTube("https://www.youtube.com/watch?v=wH-by1ydBTM")
     title = yt.title
     stream = yt.streams.first()
     stream.download()
@@ -90,7 +90,7 @@ def ugan(bot, update):
     elif bigint == 9:
         bot.send_photo(chat_id=update.message.chat_id, photo='http://i0.kym-cdn.com/photos/images/newsfeed/001/329/356/a9c.jpg')
     elif bigint == 10:
-        bot.send_photo(chat_id=update.message.chat_id, photo='http://i0.kym-cdn.com/photos/images/newsfeed/001/328/898/e9f.jpg')      
+        bot.send_photo(chat_id=update.message.chat_id, photo='http://i0.kym-cdn.com/photos/images/newsfeed/001/328/898/e9f.jpg')
 
 def logan(bot, update):
     bot.send_photo(chat_id=update.message.chat_id, photo='http://glamourlifestyles.com/wp-content/uploads/2018/01/logan-paul.jpg')
@@ -105,9 +105,20 @@ def unknown(bot, update):
 def main():
     updater = Updater(token='521816042:AAGUu7L6PEZIaFON3B96YHb-4MIqZouGME0')
     dp = updater.dispatcher
+    conv_handler = ConversationHandler(
+        entry_points=[CommandHandler("tube", tube)],
+
+        states={
+
+            BIO: [MessageHandler(Filters.text, location)]
+        },
+
+        fallbacks=[CommandHandler("uganda", ugan)]
+    )
+
+    dp.add_handler(conv_handler)
     dp.add_handler(CommandHandler("start", start))
-    dp.add_handler(CommandHandler("tube", tube))
-    dp.add_handler(MessageHandler(Filters.text, location))
+    #dp.add_handler(MessageHandler(Filters.text, location))
     dp.add_handler(CommandHandler("uganda", ugan))
     dp.add_handler(CommandHandler("logan", logan))
     dp.add_handler(CommandHandler("tide", tide))
