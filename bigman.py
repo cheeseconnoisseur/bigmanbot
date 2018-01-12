@@ -2,6 +2,7 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, Conve
 import logging
 from pytube import YouTube
 import os
+import random
 
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',level=logging.INFO)
@@ -69,7 +70,27 @@ def location(bot, update):
 
 
 def ugan(bot, update):
-    bot.send_photo(chat_id=update.message.chat_id, photo='https://pbs.twimg.com/profile_images/948650214579044352/YAyu__6g_400x400.jpg')
+    bigint = random.randint(1,11)
+    if bigint == 1:
+        bot.send_photo(chat_id=update.message.chat_id, photo='https://pbs.twimg.com/profile_images/948650214579044352/YAyu__6g_400x400.jpg')
+    elif bigint == 2:
+        bot.send_photo(chat_id=update.message.chat_id, photo='http://i0.kym-cdn.com/photos/images/newsfeed/001/328/838/c81.png')
+    elif bigint == 3:
+        bot.send_photo(chat_id=update.message.chat_id, photo='http://i0.kym-cdn.com/photos/images/newsfeed/001/328/900/8e4.jpg')
+    elif bigint == 4:
+        bot.send_photo(chat_id=update.message.chat_id, photo='http://a.kym-cdn.com/assets/abm-5e4f6f4a89609dcba11dbc32772815cc.png')
+    elif bigint == 5:
+        bot.send_photo(chat_id=update.message.chat_id, photo='http://i0.kym-cdn.com/photos/images/newsfeed/001/330/540/7c2.jpg')
+    elif bigint == 6:
+        bot.send_photo(chat_id=update.message.chat_id, photo='http://i0.kym-cdn.com/photos/images/newsfeed/001/330/213/450.png')
+    elif bigint == 7:
+        bot.send_photo(chat_id=update.message.chat_id, photo='http://i0.kym-cdn.com/photos/images/newsfeed/001/329/423/500.jpg')
+    elif bigint == 8:
+        bot.send_photo(chat_id=update.message.chat_id, photo='https://pics.me.me/ugandan-knuckles-30-hp-basic-this-is-not-the-way-30196890.png')
+    elif bigint == 9:
+        bot.send_photo(chat_id=update.message.chat_id, photo='http://i0.kym-cdn.com/photos/images/newsfeed/001/329/356/a9c.jpg')
+    elif bigint == 10:
+        bot.send_photo(chat_id=update.message.chat_id, photo='http://i0.kym-cdn.com/photos/images/newsfeed/001/328/898/e9f.jpg')      
 
 def logan(bot, update):
     bot.send_photo(chat_id=update.message.chat_id, photo='http://glamourlifestyles.com/wp-content/uploads/2018/01/logan-paul.jpg')
