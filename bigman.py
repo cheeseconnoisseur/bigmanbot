@@ -1,6 +1,7 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, ConversationHandler
 import logging
 from pytube import YouTube
+import os
 
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',level=logging.INFO)
@@ -28,11 +29,29 @@ def location(bot, update):
     user_location = update.message.location
     logger.info(user.first_name)
     update.message.reply_text(update.message.text)
-
     yt = YouTube(update.message.text)
-    yt = yt.get('mp4', '720p')
-    yt.download()
-    bot.send_document(chat_id=chat_id, document=open('tests/test.zip', 'rb'))
+    title = yt.title
+    stream = yt.streams.first()
+    stream.download()
+    oldtitle = title
+    try:
+        title = title + ".mp4"
+        #YouTube(update.message.text).streams.first().download('media')
+        bot.send_document(chat_id=update.message.chat_id, document=open(title, 'rb'),timeout=400)
+    except:
+        print("lolno")
+    try:
+        oldtitle = oldtitle + ".webm"
+        #YouTube(update.message.text).streams.first().download('media')
+        bot.send_document(chat_id=update.message.chat_id, document=open(oldtitle, 'rb'),timeout=400)
+
+    except:
+        print("lolno")
+    try:
+        os.remove(title)
+    except:
+        print("no1")
+        os.remove(oldtitle)
 
     print("lol")
     return (update.message.text)
