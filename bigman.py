@@ -38,9 +38,10 @@ def location(bot, update):
     bot.send_message(chat_id=update.message.chat_id,message_id=123, text="downlaoding")
     stream.download()
     oldtitle = title
-    bot.send_message(chat_id=update.message.chat_id,message_id=123, text="downlaoding")
+    bot.send_message(chat_id=update.message.chat_id,message_id=123, text="uploading")
     try:
         title = title + ".mp4"
+        title = title.replace(":","")
         #YouTube(update.message.text).streams.first().download('media')
         bot.send_document(chat_id=update.message.chat_id, document=open(title, 'rb'),timeout=400)
     except:
