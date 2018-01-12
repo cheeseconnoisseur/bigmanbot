@@ -42,12 +42,15 @@ def location(bot, update):
     try:
         title = title + ".mp4"
         title = title.replace(":","")
+        title = title.replace("?","")
         #YouTube(update.message.text).streams.first().download('media')
         bot.send_document(chat_id=update.message.chat_id, document=open(title, 'rb'),timeout=400)
     except:
         print("lolno")
     try:
         oldtitle = oldtitle + ".webm"
+        title = title.replace(":","")
+        title = title.replace("?","")
         #YouTube(update.message.text).streams.first().download('media')
         bot.send_document(chat_id=update.message.chat_id, document=open(oldtitle, 'rb'),timeout=400)
 
