@@ -40,16 +40,20 @@ def location(bot, update):
     stream.download()
     oldtitle = title
     bot.send_message(chat_id=update.message.chat_id,message_id=123, text="uploading")
-
+    #title = title.replace(".","")
     #title = title + ".mp4"
     #title = title.replace(":","")
+    #title = title.replace(",","")
     #title = title.replace("?","")
+    #print(title)
     ##YouTube(update.message.text).streams.first().download('media')
     #bot.send_document(chat_id=update.message.chat_id, document=open(title, 'rb'),timeout=600)
 
     try:
+        title = title.replace(".","")
         title = title + ".mp4"
         title = title.replace(":","")
+        title = title.replace(",","")
         title = title.replace("?","")
         #YouTube(update.message.text).streams.first().download('media')
         bot.send_document(chat_id=update.message.chat_id, document=open(title, 'rb'),timeout=600)
