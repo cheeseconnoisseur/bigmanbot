@@ -119,7 +119,7 @@ def calnext(bot, update):
 
 
 def ugan(bot, update):
-    bigint = random.randint(1,11)
+    bigint = random.randint(1,16)
     if bigint == 1:
         bot.send_photo(chat_id=update.message.chat_id, photo='https://pbs.twimg.com/profile_images/948650214579044352/YAyu__6g_400x400.jpg')
     elif bigint == 2:
@@ -127,7 +127,7 @@ def ugan(bot, update):
     elif bigint == 3:
         bot.send_photo(chat_id=update.message.chat_id, photo='http://i0.kym-cdn.com/photos/images/newsfeed/001/328/900/8e4.jpg')
     elif bigint == 4:
-        bot.send_photo(chat_id=update.message.chat_id, photo='http://a.kym-cdn.com/assets/abm-5e4f6f4a89609dcba11dbc32772815cc.png')
+        bot.send_photo(chat_id=update.message.chat_id, photo='http://i0.kym-cdn.com/photos/images/newsfeed/001/331/654/bb9.png')
     elif bigint == 5:
         bot.send_photo(chat_id=update.message.chat_id, photo='http://i0.kym-cdn.com/photos/images/newsfeed/001/330/540/7c2.jpg')
     elif bigint == 6:
@@ -139,7 +139,19 @@ def ugan(bot, update):
     elif bigint == 9:
         bot.send_photo(chat_id=update.message.chat_id, photo='http://i0.kym-cdn.com/photos/images/newsfeed/001/329/356/a9c.jpg')
     elif bigint == 10:
+        bot.send_photo(chat_id=update.message.chat_id, photo='http://i0.kym-cdn.com/photos/images/newsfeed/001/331/504/bd8.png')
+    elif bigint == 11:
+        bot.send_photo(chat_id=update.message.chat_id, photo='http://i0.kym-cdn.com/photos/images/newsfeed/001/331/353/919.jpg')
+    elif bigint == 12:
         bot.send_photo(chat_id=update.message.chat_id, photo='http://i0.kym-cdn.com/photos/images/newsfeed/001/328/898/e9f.jpg')
+    elif bigint == 13:
+        bot.send_photo(chat_id=update.message.chat_id, photo='http://i0.kym-cdn.com/photos/images/newsfeed/001/331/321/c62.png')
+    elif bigint == 14:
+        bot.send_photo(chat_id=update.message.chat_id, photo='http://i0.kym-cdn.com/photos/images/newsfeed/001/331/220/c8e.jpg')
+    elif bigint == 15:
+        bot.send_photo(chat_id=update.message.chat_id, photo='http://i0.kym-cdn.com/photos/images/newsfeed/001/330/487/295.jpg')
+    elif bigint == 16:
+        bot.send_photo(chat_id=update.message.chat_id, photo='http://i0.kym-cdn.com/photos/images/newsfeed/001/330/260/2f3.jpg')
 
 def logan(bot, update):
     bot.send_photo(chat_id=update.message.chat_id, photo='http://glamourlifestyles.com/wp-content/uploads/2018/01/logan-paul.jpg')
@@ -189,6 +201,8 @@ def main():
     #dp.add_handler(MessageHandler(Filters.text, echo))
     #dp.add_error_handler(error)
     updater.start_polling()
+    updater.idle()
+
 
 if __name__ == '__main__':
     main()
