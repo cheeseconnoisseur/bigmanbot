@@ -153,7 +153,8 @@ def logan(bot, update):
 def tide(bot, update):
     bot.send_photo(chat_id=update.message.chat_id, photo='https://i.redd.it/7po4xlcy6j701.jpg')
     bot.send_photo(chat_id=update.message.chat_id, photo='https://twitter.com/Tidepodmemes/status/949693054054670336/photo/1')
-
+def help(bot, update):
+    bot.send_message(chat_id=update.message.chat_id,message_id=123, text="/start\n/logan\n/tide\n/uganda\n/tube\n if /tube dosent work simple /restart")
 def unknown(bot, update):
     bot.send_message(chat_id=update.message.chat_id, text="Sorry, I didn't understand that command.")
 
@@ -190,6 +191,7 @@ def main():
     dp.add_handler(CommandHandler("logan", logan))
     dp.add_handler(CommandHandler("restart", restart))
     dp.add_handler(CommandHandler("tide", tide))
+    dp.add_handler(CommandHandler("help", help))
     unknown_handler = MessageHandler(Filters.command, unknown)
     dp.add_handler(unknown_handler)
     #dp.add_handler(MessageHandler(Filters.text, echo))
