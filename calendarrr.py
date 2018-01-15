@@ -1,6 +1,6 @@
 
 from __future__ import print_function
-import httplib
+import httplib2
 import os
 
 from apiclient import discovery
