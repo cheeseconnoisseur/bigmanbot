@@ -134,6 +134,12 @@ def ugan(bot, update):
     except:
         bigstring = 'https://raw.githubusercontent.com/cheeseconnoisseur/bigmanbot-discord/master/imgsugan/meme' + bigint + '.png'
         bot.send_photo(chat_id=update.message.chat_id, photo=bigstring)
+def stop_and_restart():
+    """Gracefully stop the Updater and replace the current process with a new one"""
+    updater.stop()
+    os.execl(sys.executable, sys.executable, *sys.argv)
+
+
 def restart(bot, update):
         update.message.reply_text('Bot is restarting...')
         Thread(target=stop_and_restart).start()
