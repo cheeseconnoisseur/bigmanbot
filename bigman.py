@@ -8,6 +8,8 @@ import random
 import sys
 from threading import Thread
 
+updater = Updater(token='521816042:AAGUu7L6PEZIaFON3B96YHb-4MIqZouGME0')
+dp = updater.dispatcher
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -156,8 +158,6 @@ def unknown(bot, update):
     bot.send_message(chat_id=update.message.chat_id, text="Sorry, I didn't understand that command.")
 
 def main():
-    updater = Updater(token='521816042:AAGUu7L6PEZIaFON3B96YHb-4MIqZouGME0')
-    dp = updater.dispatcher
     conv_handler = ConversationHandler(
         entry_points=[CommandHandler("tube", tube)],
 
