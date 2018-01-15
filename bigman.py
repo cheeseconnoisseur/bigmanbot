@@ -14,7 +14,7 @@ BIO, HM = range(2)
 
 def start(bot, update):
     user = update.message.from_user
-    bot.send_message(chat_id=update.message.chat_id, text="I'm a bot, please talk to me!")
+    bot.send_message(chat_id=update.message.chat_id, text="sup")
 
 
 
@@ -123,39 +123,16 @@ def calnext(bot, update):
 
 
 def ugan(bot, update):
+
     bigint = random.randint(1,16)
-    if bigint == 1:
-        bot.send_photo(chat_id=update.message.chat_id, photo='https://pbs.twimg.com/profile_images/948650214579044352/YAyu__6g_400x400.jpg')
-    elif bigint == 2:
-        bot.send_photo(chat_id=update.message.chat_id, photo='http://i0.kym-cdn.com/photos/images/newsfeed/001/328/838/c81.png')
-    elif bigint == 3:
-        bot.send_photo(chat_id=update.message.chat_id, photo='http://i0.kym-cdn.com/photos/images/newsfeed/001/328/900/8e4.jpg')
-    elif bigint == 4:
-        bot.send_photo(chat_id=update.message.chat_id, photo='http://i0.kym-cdn.com/photos/images/newsfeed/001/331/654/bb9.png')
-    elif bigint == 5:
-        bot.send_photo(chat_id=update.message.chat_id, photo='http://i0.kym-cdn.com/photos/images/newsfeed/001/330/540/7c2.jpg')
-    elif bigint == 6:
-        bot.send_photo(chat_id=update.message.chat_id, photo='http://i0.kym-cdn.com/photos/images/newsfeed/001/330/213/450.png')
-    elif bigint == 7:
-        bot.send_photo(chat_id=update.message.chat_id, photo='http://i0.kym-cdn.com/photos/images/newsfeed/001/329/423/500.jpg')
-    elif bigint == 8:
-        bot.send_photo(chat_id=update.message.chat_id, photo='https://pics.me.me/ugandan-knuckles-30-hp-basic-this-is-not-the-way-30196890.png')
-    elif bigint == 9:
-        bot.send_photo(chat_id=update.message.chat_id, photo='http://i0.kym-cdn.com/photos/images/newsfeed/001/329/356/a9c.jpg')
-    elif bigint == 10:
-        bot.send_photo(chat_id=update.message.chat_id, photo='http://i0.kym-cdn.com/photos/images/newsfeed/001/331/504/bd8.png')
-    elif bigint == 11:
-        bot.send_photo(chat_id=update.message.chat_id, photo='http://i0.kym-cdn.com/photos/images/newsfeed/001/331/353/919.jpg')
-    elif bigint == 12:
-        bot.send_photo(chat_id=update.message.chat_id, photo='http://i0.kym-cdn.com/photos/images/newsfeed/001/328/898/e9f.jpg')
-    elif bigint == 13:
-        bot.send_photo(chat_id=update.message.chat_id, photo='http://i0.kym-cdn.com/photos/images/newsfeed/001/331/321/c62.png')
-    elif bigint == 14:
-        bot.send_photo(chat_id=update.message.chat_id, photo='http://i0.kym-cdn.com/photos/images/newsfeed/001/331/220/c8e.jpg')
-    elif bigint == 15:
-        bot.send_photo(chat_id=update.message.chat_id, photo='http://i0.kym-cdn.com/photos/images/newsfeed/001/330/487/295.jpg')
-    elif bigint == 16:
-        bot.send_photo(chat_id=update.message.chat_id, photo='http://i0.kym-cdn.com/photos/images/newsfeed/001/330/260/2f3.jpg')
+    bigint = str(bigint)
+    try:
+        bigstring = 'https://raw.githubusercontent.com/cheeseconnoisseur/bigmanbot-discord/master/imgsugan/meme' + bigint + '.jpg'
+        bot.send_photo(chat_id=update.message.chat_id, photo=bigstring)
+    except:
+        bigstring = 'https://raw.githubusercontent.com/cheeseconnoisseur/bigmanbot-discord/master/imgsugan/meme' + bigint + '.png'
+        bot.send_photo(chat_id=update.message.chat_id, photo=bigstring)
+
 
 def logan(bot, update):
     bot.send_photo(chat_id=update.message.chat_id, photo='http://glamourlifestyles.com/wp-content/uploads/2018/01/logan-paul.jpg')

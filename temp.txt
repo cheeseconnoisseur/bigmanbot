@@ -1,0 +1,10 @@
+2018-01-14 15:30:00 economics
+2018-01-14 16:30:00 ejercicio leer
+2018-01-14 17:30:00 compski
+2018-01-15 08:50:00 11D/Bi | Biology (2007+)
+2018-01-15 09:45:00 11C/Hi1 | History
+2018-01-15 11:05:00 11B/Ec1 | Econ
+2018-01-15 12:00:00 11EA/En | English
+2018-01-15 13:40:00 113/Ma | Mathematics
+2018-01-15 14:35:00 113/Ma | Mathematics
+2018-01-15 16:30:00 ejercicio leer
