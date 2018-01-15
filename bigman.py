@@ -145,6 +145,7 @@ def stop_and_restart():
 def restart(bot, update):
         update.message.reply_text('Bot is restarting...')
         Thread(target=stop_and_restart).start()
+        update.message.reply_text('Bot restarted')
 
 
 def logan(bot, update):
