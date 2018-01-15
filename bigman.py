@@ -168,7 +168,7 @@ def main():
 
         fallbacks=[CommandHandler("uganda", ugan)]
     )
-    dp.add_handler(conv_handler)
+    dp.add_handler(conv_handler, pass_chat_data=True)
     dp.add_handler(conv_handler2)
     dp.add_handler(CommandHandler("start", start))
     #dp.add_handler(MessageHandler(Filters.text, location))
