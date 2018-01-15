@@ -155,7 +155,7 @@ def main():
             BIO: [MessageHandler(Filters.text, location)]
         },
 
-        fallbacks=[CommandHandler("uganda", ugan)]
+        fallbacks=[CommandHandler("uganda", ugan, pass_chat_data=True)]
     )
 
     conv_handler2 = ConversationHandler(
@@ -168,7 +168,7 @@ def main():
 
         fallbacks=[CommandHandler("uganda", ugan)]
     )
-    dp.add_handler(conv_handler, pass_chat_data=True)
+    dp.add_handler(conv_handler)
     dp.add_handler(conv_handler2)
     dp.add_handler(CommandHandler("start", start))
     #dp.add_handler(MessageHandler(Filters.text, location))
