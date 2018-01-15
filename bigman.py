@@ -132,6 +132,9 @@ def ugan(bot, update):
     except:
         bigstring = 'https://raw.githubusercontent.com/cheeseconnoisseur/bigmanbot-discord/master/imgsugan/meme' + bigint + '.png'
         bot.send_photo(chat_id=update.message.chat_id, photo=bigstring)
+def restart(bot, update):
+        update.message.reply_text('Bot is restarting...')
+        Thread(target=stop_and_restart).start()
 
 
 def logan(bot, update):
@@ -152,7 +155,7 @@ def main():
 
         states={
 
-            BIO: [MessageHandler(Filters.text, location, pass_chat_data=True)]
+            BIO: [MessageHandler(Filters.text, location)]
         },
 
         fallbacks=[CommandHandler("uganda", ugan)]
@@ -176,8 +179,9 @@ def main():
     #dp.add_handler(CommandHandler("cal", cal))
     dp.add_handler(CommandHandler("calnext", calnext))
     dp.add_handler(CommandHandler("logan", logan))
+    dp.add_handler(CommandHandler("restart", restart))
     dp.add_handler(CommandHandler("tide", tide))
-    unknown_handler = MessageHandler(Filters.command, unknown, pass_chat_data=True)
+    unknown_handler = MessageHandler(Filters.command, unknown)
     dp.add_handler(unknown_handler)
     #dp.add_handler(MessageHandler(Filters.text, echo))
     #dp.add_error_handler(error)
