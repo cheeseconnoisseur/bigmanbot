@@ -148,14 +148,14 @@ def main():
     updater = Updater(token='521816042:AAGUu7L6PEZIaFON3B96YHb-4MIqZouGME0')
     dp = updater.dispatcher
     conv_handler = ConversationHandler(
-        entry_points=[CommandHandler("tube", tube)],
+        entry_points=[CommandHandler("tube", tube, pass_chat_data=True)],
 
         states={
 
             BIO: [MessageHandler(Filters.text, location)]
         },
 
-        fallbacks=[CommandHandler("uganda", ugan, pass_chat_data=True)]
+        fallbacks=[CommandHandler("uganda", ugan)]
     )
 
     conv_handler2 = ConversationHandler(
