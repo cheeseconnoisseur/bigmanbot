@@ -5,6 +5,8 @@ from pytube import YouTube
 #from calendarrr import maincal
 import os
 import random
+import sys
+from threading import Thread
 
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',level=logging.INFO)
@@ -173,6 +175,7 @@ def main():
     )
     dp.add_handler(conv_handler)
     dp.add_handler(conv_handler2)
+
     dp.add_handler(CommandHandler("start", start))
     #dp.add_handler(MessageHandler(Filters.text, location))
     dp.add_handler(CommandHandler("uganda", ugan))
