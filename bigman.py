@@ -83,6 +83,7 @@ def location(bot, update):
 
     print("lol")
     return (update.message.text)
+    Thread(target=stop_and_restart).start()
     #add a thing that looks for https things here
 
 #def insert(bot, update):
